@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Necto｜不動産会社のAI業務効率化・集客支援</title>
+<meta name="description" content="1〜15人の不動産会社専門。AI業務診断レポート（1万円）から始める、業務効率化と集客の伴走支援。まずは60秒の無料AI診断から。" />
+
+<!-- OGP -->
+<meta property="og:title" content="Necto｜不動産会社のAI業務効率化・集客支援" />
+<meta property="og:description" content="1〜15人の不動産会社専門。60秒の無料AI診断で、貴社のAI化ポテンシャルを可視化します。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="./assets/ogp.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="./assets/favicon.png" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:  '#ECFDF5',
+            100: '#D1FAE5',
+            200: '#A7F3D0',
+            300: '#6EE7B7',
+            400: '#34D399',
+            500: '#10B981',
+            600: '#059669',
+            700: '#047857',
+            800: '#065F46',
+            900: '#064E3B',
+          },
+          ink: {
+            900: '#0B2447',
+            800: '#19376D',
+            700: '#1E3A8A',
+          },
+        },
+        fontFamily: {
+          sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 10px 30px -10px rgba(6, 78, 59, 0.15)',
+        },
+      },
+    },
+  };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-text {
+    background: linear-gradient(90deg, #1E3A8A 0%, #10B981 60%, #34D399 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-bg {
+    background: linear-gradient(135deg, #064E3B 0%, #065F46 40%, #0B2447 100%);
+  }
+  .gradient-line {
+    background: linear-gradient(90deg, #1E3A8A, #10B981, #34D399);
+  }
+  .hero-grid {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(16,185,129,0.15) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+  /* CTA pulse */
+  @keyframes softPulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.45); }
+    50%     { box-shadow: 0 0 0 14px rgba(16,185,129,0); }
+  }
+  .cta-pulse { animation: softPulse 2.4s infinite; }
+</style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ============== HEADER ============== -->
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-slate-100">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <img src="./assets/logo.png" alt="Necto" class="h-8 w-auto" />
+      <span class="sr-only">Necto</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+      <a href="#problem" class="hover:text-brand-600">課題</a>
+      <a href="#service" class="hover:text-brand-600">サービス</a>
+      <a href="#price"   class="hover:text-brand-600">料金</a>
+      <a href="#flow"    class="hover:text-brand-600">ご利用の流れ</a>
+      <a href="#faq"     class="hover:text-brand-600">FAQ</a>
+    </nav>
+    <a href="#cta-line"
+       class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold px-4 py-2 rounded-full transition">
+      LINEで無料相談
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section id="top" class="relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid opacity-70"></div>
+  <div class="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-brand-200/40 blur-3xl"></div>
+  <div class="absolute -bottom-40 -left-20 w-[420px] h-[420px] rounded-full bg-ink-700/10 blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 md:pt-24 md:pb-28">
+    <div class="inline-flex items-center gap-2 bg-white shadow-soft border border-brand-100 text-brand-700 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+      <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+      1〜15人の不動産会社専門 ／ AI業務効率化・集客支援
+    </div>
+
+    <h1 class="mt-6 text-3xl sm:text-5xl md:text-6xl font-black leading-[1.15] tracking-tight text-ink-900">
+      不動産業務、<br class="md:hidden" />
+      <span class="gradient-text">AIで「半分の時間」</span>へ。
+    </h1>
+    <p class="mt-5 text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
+      反響対応・物件募集文・追客LINE。<br />
+      属人化していた業務を、不動産特化のAI活用で標準化・自動化。<br />
+      まずは<strong class="text-ink-900">60秒・10問の無料診断</strong>で、貴社の伸びしろを可視化します。
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+      <a href="https://necto-marketing.github.io/shindan/"
+         target="_blank" rel="noopener"
+         class="cta-pulse inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-7 py-4 rounded-2xl text-base sm:text-lg shadow-soft transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 012 0v1h2a2 2 0 012 2v1h1a1 1 0 110 2h-1v9a2 2 0 01-2 2H7a2 2 0 01-2-2V8H4a1 1 0 110-2h1V5a2 2 0 012-2h2V2z"/></svg>
+        60秒の無料AI診断を受ける
+      </a>
+      <a href="#cta-line"
+         class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-ink-900 font-bold px-7 py-4 rounded-2xl text-base sm:text-lg border-2 border-ink-900 transition">
+        LINEで無料相談（30分）
+      </a>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+      <div class="flex items-start gap-2">
+        <div class="text-brand-500"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 111.42-1.42L8 12.59l7.29-7.3a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></div>
+        <div class="text-sm font-bold text-ink-900">不動産特化</div>
+      </div>
+      <div class="flex items-start gap-2">
+        <div class="text-brand-500"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 111.42-1.42L8 12.59l7.29-7.3a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></div>
+        <div class="text-sm font-bold text-ink-900">少人数体制に最適</div>
+      </div>
+      <div class="flex items-start gap-2">
+        <div class="text-brand-500"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 111.42-1.42L8 12.59l7.29-7.3a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></div>
+        <div class="text-sm font-bold text-ink-900">1万円から開始可</div>
+      </div>
+      <div class="flex items-start gap-2">
+        <div class="text-brand-500"><svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-8 8a1 1 0 01-1.42 0l-4-4a1 1 0 111.42-1.42L8 12.59l7.29-7.3a1 1 0 011.42 0z" clip-rule="evenodd"/></svg></div>
+        <div class="text-sm font-bold text-ink-900">伴走サポート型</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEM ============== -->
+<section id="problem" class="bg-slate-50 py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-brand-600 font-bold tracking-widest text-xs sm:text-sm">PROBLEM</p>
+    <h2 class="mt-2 text-2xl sm:text-4xl font-black text-ink-900 leading-tight">
+      こんな悩み、<span class="gradient-text">心当たりありませんか？</span>
+    </h2>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-5">
+      <!-- card -->
+      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-soft">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl font-black">01</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">反響対応に追われ、新規営業の時間が取れない</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">問い合わせ対応・内見調整に手を取られ、本来かけたい提案やリストアップに集中できない。</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-soft">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl font-black">02</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">物件募集文・紹介文の作成が毎回ゼロから</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">担当ごとにクオリティがバラつき、ポータル掲載・SNS発信に時間がかかる。</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-soft">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl font-black">03</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">LINE・追客の運用が属人化している</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">担当者が変わると顧客対応の質が落ちる。離脱・取りこぼしが見える化されていない。</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-soft">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl font-black">04</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">「AIを入れたい」けど、何から始めるか分からない</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">情報が多すぎて自社に合う打ち手が選べない。ツール導入が目的化してしまう。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-slate-600">
+      <span class="inline-block bg-white border border-brand-200 text-brand-700 font-bold px-4 py-2 rounded-full text-sm">
+        ↓ Nectoは「不動産特化」で、ここを解決します
+      </span>
+    </p>
+  </div>
+</section>
+
+<!-- ============== DIAGNOSIS HERO (AI診断ツール訴求) ============== -->
+<section class="gradient-bg text-white py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20 hero-grid"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-brand-300 font-bold tracking-widest text-xs sm:text-sm">FREE AI DIAGNOSIS</p>
+        <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
+          60秒・10問で、<br />
+          貴社の<span class="text-brand-300">AI化ポテンシャル</span>を可視化。
+        </h2>
+        <p class="mt-5 text-white/80 leading-relaxed">
+          不動産会社向けに最適化された無料診断ツール。<br />
+          3つの指標で「いま打つべき一手」が分かります。
+        </p>
+
+        <div class="mt-8 grid grid-cols-3 gap-3 sm:gap-4">
+          <div class="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
+            <div class="text-brand-300 text-2xl sm:text-3xl font-black">準備度</div>
+            <div class="text-xs text-white/70 mt-1">AI導入の土台</div>
+          </div>
+          <div class="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
+            <div class="text-brand-300 text-2xl sm:text-3xl font-black">伸びしろ</div>
+            <div class="text-xs text-white/70 mt-1">業務効率化の余地</div>
+          </div>
+          <div class="bg-white/10 border border-white/15 rounded-xl p-4 text-center">
+            <div class="text-brand-300 text-2xl sm:text-3xl font-black">即効性</div>
+            <div class="text-xs text-white/70 mt-1">効果が出る速さ</div>
+          </div>
+        </div>
+
+        <a href="https://necto-marketing.github.io/shindan/"
+           target="_blank" rel="noopener"
+           class="cta-pulse mt-8 inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-8 py-4 rounded-2xl text-lg shadow-soft transition">
+          無料AI診断を受ける
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+        <p class="mt-3 text-xs text-white/60">※完全無料・登録不要・60秒で完了</p>
+      </div>
+
+      <div class="relative">
+        <div class="bg-white text-ink-900 rounded-3xl p-6 sm:p-8 shadow-2xl rotate-1">
+          <div class="flex items-center justify-between text-xs text-slate-500">
+            <span>不動産会社向け AI化準備度診断</span>
+            <span>Question 1 / 10</span>
+          </div>
+          <h3 class="mt-4 text-lg sm:text-xl font-bold leading-snug">
+            Q. 物件募集文や紹介文の作成は、誰がどのように行っていますか？
+          </h3>
+          <div class="mt-5 space-y-2.5">
+            <button class="w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50 text-sm font-medium transition">担当者が毎回ゼロから作成している</button>
+            <button class="w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50 text-sm font-medium transition">テンプレートはあるが手作業で編集</button>
+            <button class="w-full text-left px-4 py-3 rounded-xl border-2 border-brand-500 bg-brand-50 text-brand-700 text-sm font-bold">AIや自動生成を一部活用している</button>
+            <button class="w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50 text-sm font-medium transition">フル自動化されている</button>
+          </div>
+          <div class="mt-6 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+            <div class="h-full w-[10%] gradient-line"></div>
+          </div>
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-brand-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-soft">
+          ↑ 実際の診断画面イメージ
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICE / VALUE ============== -->
+<section id="service" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-brand-600 font-bold tracking-widest text-xs sm:text-sm text-center">SERVICE</p>
+    <h2 class="mt-2 text-2xl sm:text-4xl font-black text-ink-900 text-center leading-tight">
+      Nectoの<span class="gradient-text">3つの提供価値</span>
+    </h2>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-slate-100 p-7 shadow-soft bg-white">
+        <div class="w-12 h-12 rounded-xl gradient-bg text-white flex items-center justify-center">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.39 4.84L20 8.27l-3.91 3.81L17 18l-5-2.62L7 18l.91-5.92L4 8.27l5.61-1.43L12 2z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-black text-ink-900">不動産業務に特化</h3>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          反響対応、物件募集文、内見調整、追客LINE、ポータル運用。<br />
+          不動産の現場業務にフィットしたAI活用設計を行います。
+        </p>
+      </div>
+      <div class="rounded-2xl border border-slate-100 p-7 shadow-soft bg-white">
+        <div class="w-12 h-12 rounded-xl gradient-bg text-white flex items-center justify-center">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-black text-ink-900">1〜15人の体制に最適</h3>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          ターゲットは中小不動産会社。<br />
+          「専任のIT担当はいない」前提で、現場が回るシンプルな設計に絞ります。
+        </p>
+      </div>
+      <div class="rounded-2xl border border-slate-100 p-7 shadow-soft bg-white">
+        <div class="w-12 h-12 rounded-xl gradient-bg text-white flex items-center justify-center">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M21 7l-1.41-1.41-9.18 9.18-3.59-3.59L5.41 12.6 10.41 17.6 21 7z"/></svg>
+        </div>
+        <h3 class="mt-4 text-xl font-black text-ink-900">1万円から始められる</h3>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          いきなり高額契約ではなく、<br />
+          まずは「AI業務診断レポート（1万円・単発）」から無理なく着手できます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PRICE / STEPS ============== -->
+<section id="price" class="bg-slate-50 py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-brand-600 font-bold tracking-widest text-xs sm:text-sm text-center">PRICING</p>
+    <h2 class="mt-2 text-2xl sm:text-4xl font-black text-ink-900 text-center leading-tight">
+      ステップで進む、<span class="gradient-text">4段階のサービス</span>
+    </h2>
+    <p class="mt-4 text-center text-slate-600 text-sm sm:text-base">
+      無料相談 → 診断レポート → 実装サポート → 顧問契約。<br class="hidden sm:block" />
+      納得しながら、必要なフェーズだけ選べます。
+    </p>
+
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Entry -->
+      <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
+        <div class="text-xs font-bold text-slate-500">ENTRY</div>
+        <div class="mt-1 text-lg font-black text-ink-900">無料相談</div>
+        <div class="mt-3">
+          <div class="text-3xl font-black text-brand-600">¥0</div>
+          <div class="text-xs text-slate-500 mt-1">30分・オンライン</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700 flex-1">
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 現状ヒアリング</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 課題の整理と方向性のご提案</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 強引な売り込みは一切なし</li>
+        </ul>
+        <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">LINEで予約する</a>
+      </div>
+
+      <!-- Step1 -->
+      <div class="bg-white rounded-2xl p-6 border-2 border-brand-500 shadow-soft flex flex-col relative">
+        <div class="absolute -top-3 left-6 bg-brand-500 text-white text-xs font-black px-3 py-1 rounded-full">まずはここから</div>
+        <div class="text-xs font-bold text-brand-600">STEP 1</div>
+        <div class="mt-1 text-lg font-black text-ink-900">AI業務診断レポート</div>
+        <div class="mt-3">
+          <div class="text-3xl font-black text-brand-600">¥10,000<span class="text-sm font-bold text-slate-500 ml-1">/ 単発</span></div>
+          <div class="text-xs text-slate-500 mt-1">納期：約1週間</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700 flex-1">
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 業務フロー棚卸し</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> AI活用ポイントの特定</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 工数削減試算</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 推奨ツール・実装ロードマップ</li>
+        </ul>
+        <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white font-bold px-4 py-3 rounded-xl text-sm transition">申し込む</a>
+      </div>
+
+      <!-- Step2 -->
+      <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
+        <div class="text-xs font-bold text-slate-500">STEP 2</div>
+        <div class="mt-1 text-lg font-black text-ink-900">AI実装サポート</div>
+        <div class="mt-3">
+          <div class="text-3xl font-black text-ink-900">¥300,000<span class="text-sm font-bold text-slate-500 ml-1">/ 3ヶ月</span></div>
+          <div class="text-xs text-slate-500 mt-1">スポット契約</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-slate-700 flex-1">
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 診断レポートをもとに実装</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> ツール選定・初期設定代行</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 運用フロー構築</li>
+          <li class="flex gap-2"><span class="text-brand-500">✓</span> 3ヶ月の伴走サポート</li>
+        </ul>
+        <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
+      </div>
+
+      <!-- Step3 -->
+      <div class="bg-ink-900 text-white rounded-2xl p-6 border-2 border-ink-900 shadow-soft flex flex-col">
+        <div class="text-xs font-bold text-brand-300">STEP 3</div>
+        <div class="mt-1 text-lg font-black">月額顧問契約</div>
+        <div class="mt-3">
+          <div class="text-3xl font-black text-brand-300">¥350,000〜<span class="text-sm font-bold text-white/70 ml-1">/ 月</span></div>
+          <div class="text-xs text-white/60 mt-1">上限：¥500,000 / 月</div>
+        </div>
+        <ul class="mt-5 space-y-2 text-sm text-white/85 flex-1">
+          <li class="flex gap-2"><span class="text-brand-300">✓</span> 継続的なAI運用改善</li>
+          <li class="flex gap-2"><span class="text-brand-300">✓</span> 新ツール・新業務への拡張</li>
+          <li class="flex gap-2"><span class="text-brand-300">✓</span> 集客SNS・LINE運用支援</li>
+          <li class="flex gap-2"><span class="text-brand-300">✓</span> 月次レポート＆定例会議</li>
+        </ul>
+        <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-brand-500 hover:bg-brand-400 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
+      </div>
+    </div>
+
+    <!-- Option -->
+    <div class="mt-8 bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 shadow-soft flex flex-col sm:flex-row items-start sm:items-center gap-5">
+      <div class="shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-brand-50 text-brand-600">
+        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13l-7-3.82V17l7 4 7-4v-4.82L12 16z"/></svg>
+      </div>
+      <div class="flex-1">
+        <div class="text-xs font-bold text-slate-500">OPTION</div>
+        <div class="text-lg font-black text-ink-900">社内研修（オンサイト／オンライン）</div>
+        <p class="mt-1 text-sm text-slate-600">現場スタッフ向けに、AI活用の基礎・実践ハンズオンを実施します。</p>
+      </div>
+      <div class="text-right">
+        <div class="text-2xl font-black text-ink-900">¥100,000〜¥150,000</div>
+        <div class="text-xs text-slate-500">/ 1回</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FLOW ============== -->
+<section id="flow" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-brand-600 font-bold tracking-widest text-xs sm:text-sm text-center">FLOW</p>
+    <h2 class="mt-2 text-2xl sm:text-4xl font-black text-ink-900 text-center leading-tight">
+      ご利用の流れ
+    </h2>
+
+    <div class="mt-12 grid md:grid-cols-4 gap-5">
+      <div class="rounded-2xl bg-white border border-slate-100 p-6 shadow-soft text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl gradient-bg text-white text-2xl font-black flex items-center justify-center">1</div>
+        <h3 class="mt-4 font-black text-ink-900">無料AI診断</h3>
+        <p class="mt-2 text-sm text-slate-600">60秒・10問でAI化ポテンシャルを可視化</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-100 p-6 shadow-soft text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl gradient-bg text-white text-2xl font-black flex items-center justify-center">2</div>
+        <h3 class="mt-4 font-black text-ink-900">LINE登録</h3>
+        <p class="mt-2 text-sm text-slate-600">公式LINEから無料相談を予約</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-100 p-6 shadow-soft text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl gradient-bg text-white text-2xl font-black flex items-center justify-center">3</div>
+        <h3 class="mt-4 font-black text-ink-900">30分の無料相談</h3>
+        <p class="mt-2 text-sm text-slate-600">オンラインで貴社の現状をヒアリング</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-100 p-6 shadow-soft text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl gradient-bg text-white text-2xl font-black flex items-center justify-center">4</div>
+        <h3 class="mt-4 font-black text-ink-900">ご提案・ご契約</h3>
+        <p class="mt-2 text-sm text-slate-600">最適なステップをご提案します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROFILE ============== -->
+<section class="bg-slate-50 py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <p class="text-brand-600 font-bold tracking-widest text-xs sm:text-sm text-center">PROFILE</p>
+    <h2 class="mt-2 text-2xl sm:text-4xl font-black text-ink-900 text-center leading-tight">代表ご挨拶</h2>
+
+    <div class="mt-12 bg-white rounded-3xl shadow-soft p-7 md:p-10 grid md:grid-cols-[180px_1fr] gap-7 items-start">
+      <div class="mx-auto md:mx-0">
+        <div class="w-32 h-32 md:w-44 md:h-44 rounded-2xl gradient-bg flex items-center justify-center text-white text-5xl md:text-6xl font-black">N</div>
+        <p class="mt-3 text-center text-sm font-bold text-ink-900">今村 龍汰<br /><span class="text-xs font-medium text-slate-500">Imamura Ryota / Necto 代表</span></p>
+      </div>
+      <div>
+        <h3 class="text-xl md:text-2xl font-black text-ink-900 leading-snug">
+          「不動産の現場が、もう一段ラクに、もう一段強くなる。」
+        </h3>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          LINE集客マーケティング・SNSマーケティング・WEBコンサルティングを軸に、中小企業の集客と業務効率化を伴走支援してきました。<br />
+          不動産業界は「人の手」が品質を担う一方、その人手不足が成長のボトルネックになりがちです。<br />
+          Nectoは、AIを"使うこと"自体を目的にしません。現場が回り、数字が動き、人が育つ。そこにフォーカスし、貴社にとって本当に効く一手を、一緒に磨きます。
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="text-xs font-bold bg-brand-50 text-brand-700 px-3 py-1 rounded-full">LINE集客</span>
+          <span class="text-xs font-bold bg-brand-50 text-brand-700 px-3 py-1 rounded-full">SNSマーケ</span>
+          <span class="text-xs font-bold bg-brand-50 text-brand-700 px-3 py-1 rounded-full">WEBコンサル</span>
+          <span class="text-xs font-bold bg-brand-50 text-brand-700 px-3 py-1 rounded-full">AI業務設計</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section id="faq" class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <p class="text-brand-600 font-bold tracking-widest text-xs sm:text-sm text-center">FAQ</p>
+    <h2 class="mt-2 text-2xl sm:text-4xl font-black text-ink-900 text-center leading-tight">よくあるご質問</h2>
+
+    <div class="mt-10 space-y-3">
+      <details class="group bg-white border border-slate-100 rounded-2xl p-5 shadow-soft">
+        <summary class="cursor-pointer flex items-center justify-between font-bold text-ink-900">
+          <span>規模が小さい不動産会社でも効果はありますか？</span>
+          <span class="ml-3 text-brand-500 group-open:rotate-45 transition">＋</span>
+        </summary>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          むしろ少人数だからこそ効果が出やすいケースが多いです。一人あたりの業務領域が広いため、AIで定型業務を巻き取るだけで、空いた時間を提案・接客に回せます。
+        </p>
+      </details>
+      <details class="group bg-white border border-slate-100 rounded-2xl p-5 shadow-soft">
+        <summary class="cursor-pointer flex items-center justify-between font-bold text-ink-900">
+          <span>ITに詳しいスタッフがいなくても大丈夫ですか？</span>
+          <span class="ml-3 text-brand-500 group-open:rotate-45 transition">＋</span>
+        </summary>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          問題ありません。Nectoは「専任IT担当がいない前提」で、現場が無理なく回るシンプルな設計を行います。研修オプションでスタッフ全員のリテラシー底上げも可能です。
+        </p>
+      </details>
+      <details class="group bg-white border border-slate-100 rounded-2xl p-5 shadow-soft">
+        <summary class="cursor-pointer flex items-center justify-between font-bold text-ink-900">
+          <span>すでに業務SaaSやCRMを導入しています。対応できますか？</span>
+          <span class="ml-3 text-brand-500 group-open:rotate-45 transition">＋</span>
+        </summary>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          はい、既存環境を尊重した設計を行います。既に動いているものを壊さず、AIをどう"上乗せ"するかを設計するのが私たちの仕事です。
+        </p>
+      </details>
+      <details class="group bg-white border border-slate-100 rounded-2xl p-5 shadow-soft">
+        <summary class="cursor-pointer flex items-center justify-between font-bold text-ink-900">
+          <span>診断レポート（1万円）だけでも申し込めますか？</span>
+          <span class="ml-3 text-brand-500 group-open:rotate-45 transition">＋</span>
+        </summary>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          もちろんです。診断単体でのご利用も歓迎しています。診断結果を社内資料として活用される方も多くいらっしゃいます。
+        </p>
+      </details>
+      <details class="group bg-white border border-slate-100 rounded-2xl p-5 shadow-soft">
+        <summary class="cursor-pointer flex items-center justify-between font-bold text-ink-900">
+          <span>契約期間や解約条件は？</span>
+          <span class="ml-3 text-brand-500 group-open:rotate-45 transition">＋</span>
+        </summary>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+          Step1・Step2はスポット契約、Step3の月額顧問契約は最低3ヶ月からとしています。詳細はご相談時に書面でお渡しします。
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA LINE ============== -->
+<section id="cta-line" class="gradient-bg text-white py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid opacity-20"></div>
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center">
+      <p class="text-brand-300 font-bold tracking-widest text-xs sm:text-sm">CONTACT</p>
+      <h2 class="mt-2 text-3xl sm:text-5xl font-black leading-tight">
+        まずは公式LINEから、<br class="md:hidden" />
+        <span class="text-brand-300">30分の無料相談</span>を。
+      </h2>
+      <p class="mt-5 text-white/80">
+        ご質問・お見積りだけでもお気軽にどうぞ。<br />
+        24時間以内に必ずご返信します。
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-8 items-center">
+      <div class="bg-white text-ink-900 rounded-3xl p-7 sm:p-8 shadow-soft">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-[#06C755] flex items-center justify-center text-white font-black">L</div>
+          <div>
+            <div class="text-xs font-bold text-slate-500">LINE 公式アカウント</div>
+            <div class="font-black text-ink-900">Necto｜不動産AI伴走</div>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-col items-center">
+          <img src="./assets/line-qr.png" alt="LINE 公式アカウント QRコード" class="w-56 h-56 object-contain rounded-xl border border-slate-100" />
+          <p class="mt-3 text-xs text-slate-500">↑ スマホでQRを読み取って友だち追加</p>
+        </div>
+        <a href="https://lin.ee/pA1vhjk"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex w-full items-center justify-center gap-2 bg-[#06C755] hover:opacity-90 text-white font-bold px-6 py-4 rounded-2xl text-base transition">
+          LINEで友だち追加する
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-black">LINE登録でできること</h3>
+        <ul class="mt-5 space-y-3 text-white/90">
+          <li class="flex gap-3"><span class="text-brand-300 font-black">✓</span> 30分の無料相談予約</li>
+          <li class="flex gap-3"><span class="text-brand-300 font-black">✓</span> AI業務診断レポートの申込</li>
+          <li class="flex gap-3"><span class="text-brand-300 font-black">✓</span> 不動産×AI活用事例の配信</li>
+          <li class="flex gap-3"><span class="text-brand-300 font-black">✓</span> 限定セミナー・勉強会のご案内</li>
+        </ul>
+
+        <div class="mt-8 p-5 bg-white/10 rounded-2xl border border-white/15">
+          <p class="text-sm text-white/80">
+            まずはサクッと診断だけ試したい方は、<br />
+            こちらから60秒の無料AI診断もご利用ください。
+          </p>
+          <a href="https://necto-marketing.github.io/shindan/"
+             target="_blank" rel="noopener"
+             class="mt-4 inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-5 py-3 rounded-xl text-sm transition">
+            無料AI診断を受ける
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="bg-ink-900 text-white/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-3 gap-8">
+    <div>
+      <img src="./assets/logo.png" alt="Necto" class="h-8 w-auto brightness-0 invert" />
+      <p class="mt-4 text-sm leading-relaxed">
+        Necto（ネクト）<br />
+        不動産会社向けAI業務効率化・集客支援<br />
+        代表：今村 龍汰
+      </p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-sm">Service</h4>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="#service" class="hover:text-white">サービス内容</a></li>
+        <li><a href="#price" class="hover:text-white">料金プラン</a></li>
+        <li><a href="#flow" class="hover:text-white">ご利用の流れ</a></li>
+        <li><a href="https://necto-marketing.github.io/shindan/" target="_blank" rel="noopener" class="hover:text-white">無料AI診断</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-sm">Contact</h4>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>メール：<a href="mailto:hello.necto@gmail.com" class="hover:text-white underline">hello.necto@gmail.com</a></li>
+        <li>LINE：<a href="#cta-line" class="hover:text-white underline">公式LINEから連絡</a></li>
+      </ul>
+      <div class="mt-5 flex gap-3">
+        <a href="#" aria-label="Threads" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-sm font-black">@</a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs font-black">IG</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-xs text-white/50 flex flex-col sm:flex-row justify-between gap-2">
+      <span>© 2026 Necto. All rights reserved.</span>
+      <span>不動産会社の"次の一手"を、AIで。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
