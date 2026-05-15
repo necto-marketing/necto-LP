@@ -339,7 +339,7 @@
       納得しながら、必要なフェーズだけ選べます。
     </p>
 
-    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
       <!-- Entry -->
       <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
         <div class="text-xs font-bold text-slate-500">ENTRY</div>
@@ -390,21 +390,74 @@
         <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
       </div>
 
-      <!-- Step3 -->
-      <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
-        <div class="text-xs font-bold text-slate-500">STEP 3</div>
-        <div class="mt-1 text-lg font-black text-ink-900">月額顧問契約</div>
-        <div class="mt-3">
-          <div class="text-3xl font-black text-brand-600">¥150,000〜<span class="text-sm font-bold text-slate-500 ml-1">/ 月</span></div>
-          <div class="text-xs text-slate-500 mt-1">最低3ヶ月から</div>
+    </div>
+
+    <!-- Step3 3-plan detail -->
+    <div class="mt-16">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="text-xs font-black text-brand-600 tracking-widest">STEP 3</span>
+        <span class="h-px flex-1 bg-slate-200"></span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-black text-ink-900">月額顧問契約（3プラン制）</h3>
+      <p class="mt-2 text-sm text-slate-600">フェーズと目的に合わせて、3つのプランからお選びいただけます（最低3ヶ月から）。</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-5">
+        <!-- ライト -->
+        <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
+          <div class="text-xs font-bold text-slate-500">LIGHT</div>
+          <div class="mt-1 text-lg font-black text-ink-900">ライト</div>
+          <div class="mt-3">
+            <div class="text-3xl font-black text-brand-600">¥150,000<span class="text-sm font-bold text-slate-500 ml-1">/ 月</span></div>
+          </div>
+          <div class="mt-4 bg-slate-50 rounded-lg px-3 py-2.5">
+            <div class="text-xs font-bold text-slate-500">こんな方に</div>
+            <div class="text-xs text-slate-700 mt-0.5 leading-relaxed">Step2 完了直後の維持運用</div>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 flex-1">
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> 質問対応</li>
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> 月1回の定例MTG</li>
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> AI動向レポート</li>
+          </ul>
+          <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
         </div>
-        <ul class="mt-5 space-y-2 text-sm text-slate-700 flex-1">
-          <li class="flex gap-2"><span class="text-brand-500">✓</span> 継続的なAI運用改善</li>
-          <li class="flex gap-2"><span class="text-brand-500">✓</span> 新ツール・新業務への拡張</li>
-          <li class="flex gap-2"><span class="text-brand-500">✓</span> 集客SNS・LINE運用支援</li>
-          <li class="flex gap-2"><span class="text-brand-500">✓</span> 月次レポート＆定例会議</li>
-        </ul>
-        <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
+
+        <!-- スタンダード -->
+        <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
+          <div class="text-xs font-bold text-slate-500">STANDARD</div>
+          <div class="mt-1 text-lg font-black text-ink-900">スタンダード</div>
+          <div class="mt-3">
+            <div class="text-3xl font-black text-brand-600">¥350,000<span class="text-sm font-bold text-slate-500 ml-1">/ 月</span></div>
+          </div>
+          <div class="mt-4 bg-slate-50 rounded-lg px-3 py-2.5">
+            <div class="text-xs font-bold text-slate-500">こんな方に</div>
+            <div class="text-xs text-slate-700 mt-0.5 leading-relaxed">攻めに転じたい会社</div>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 flex-1">
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> 売上向上施策の継続実装</li>
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> 月2回の定例MTG</li>
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> ライトの内容をすべて含む</li>
+          </ul>
+          <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
+        </div>
+
+        <!-- エンタープライズ -->
+        <div class="bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-soft flex flex-col">
+          <div class="text-xs font-bold text-slate-500">ENTERPRISE</div>
+          <div class="mt-1 text-lg font-black text-ink-900">エンタープライズ</div>
+          <div class="mt-3">
+            <div class="text-3xl font-black text-brand-600">¥600,000<span class="text-sm font-bold text-slate-500 ml-1">/ 月</span></div>
+          </div>
+          <div class="mt-4 bg-slate-50 rounded-lg px-3 py-2.5">
+            <div class="text-xs font-bold text-slate-500">こんな方に</div>
+            <div class="text-xs text-slate-700 mt-0.5 leading-relaxed">AIで本気で事業拡大したい会社</div>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 flex-1">
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> 経営パートナーとして伴走</li>
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> 現地訪問・営業会議参加</li>
+            <li class="flex gap-2"><span class="text-brand-500">✓</span> スタンダードの内容をすべて含む</li>
+          </ul>
+          <a href="#cta-line" class="mt-6 inline-flex items-center justify-center bg-ink-900 hover:bg-ink-800 text-white font-bold px-4 py-3 rounded-xl text-sm transition">相談する</a>
+        </div>
       </div>
     </div>
 
